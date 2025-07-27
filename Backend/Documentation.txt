@@ -1,0 +1,45 @@
+Contact Management API Documentation
+====================================
+
+1. POST /api/Contacts/add - Add a new contact
+--------------------------------
+Request Body (JSON):
+{
+  "Username": "Debankur Dutta",
+  "Email": "debankur@example.com",
+  "Phone_Number": 9876543210
+}
+
+2. PUT /api/Contacts/update - Update an existing contact (by Email)
+------------------------------------------------------
+Request Body (JSON):
+{
+  "Username": "Debankur D",
+  "Email": "debankur@example.com",
+  "Phone_Number": 9123456789
+}
+
+3. GET /api/Contacts/all - Get all contacts
+------------------------------
+No request body required.
+
+4. DELETE /api/Contacts/delete - Delete a contact (by Email)
+-----------------------------------------------
+Request Body (JSON):
+{
+  "Email": "debankur@example.com"
+}
+
+Error Example - Missing Field
+-----------------------------
+Request Body:
+{
+  "Username": "Debankur Dutta",
+  "Email": "debankur@example.com"
+}
+
+Expected Response:
+{
+  "success": false,
+  "message": "Missing Details"
+}
